@@ -6,7 +6,7 @@ CREATE USER $PG_REP_USER REPLICATION LOGIN CONNECTION LIMIT 100 ENCRYPTED PASSWO
 CREATE USER postgres;
 EOSQL
 cat >> ${PGDATA}/postgresql.conf <<EOF
-wal_level = hot_standby
+wal_level = replica
 archive_mode = on
 archive_command = 'cd .'
 max_wal_senders = 8
